@@ -21,9 +21,12 @@ For SAMSum and MediaSum datasets, you can download preprocessed data files direc
 ([SAMSum](https://drive.google.com/file/d/1IzdkmuVQfhrH-D_WuLV5uKQds-vus2P8/view?usp=sharing), [MediaSum](https://drive.google.com/file/d/15VxjmyHlkLH4GHgOufYUHtTVt53oJwe5/view?usp=sharing)), 
 which results in ```train_sh/SAMSumInd/``` and ```train_sh/mediasum/```. 
 
-Change working directory: 
+Change working directory and download: 
 ```
 cd train_sh
+wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json'
+wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe'
+wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/dict.txt'
 ```
 #### SAMSum dataset
 ```
@@ -39,9 +42,6 @@ cd train_sh
 To facilitate training on custom datasets, a demo dataset is provided in ```train_sh/customdata/``` directory, please prepare your own data files following the ```*.jsonl``` files. Then, pre-processing steps are as follows:
 
 ```
-wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json'
-wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe'
-wget -N 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/dict.txt'
 ./bpe.sh
 ./binarize.sh
 ```
